@@ -1,0 +1,5 @@
+# Tested with Python 3.10+
+numpy>=1.24
+scipy>=1.10
+torch>=2.0
+matplotlib>=3.7
