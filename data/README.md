@@ -1,6 +1,8 @@
 # RadarNoiseBench Dataset Directory
 
-> 🚧 **Status: Coming Soon!**
+🔗 **Base Multimodal Recordings (TIM 2026):** [https://github.com/NguyenVanKhai2412/Camera-UWB_Radars-Fusion-VitalEstimation.git](https://github.com/NguyenVanKhai2412/Camera-UWB_Radars-Fusion-VitalEstimation.git)
+
+> 🚧 **Preprocessed Slow-Time IQ Windows Status: Coming Soon!**
 > The full anonymized slow-time IQ window files (`{radar}_w40_s2.npz` and `{radar}_w40_s2_best.npz`) and pre-computed cardiac spectral features (`hr_best_w40_s2.npz`) will be released upon publication of the manuscript.
 >
 > In the meantime, [`radarnoise.data.synthetic_windows()`](../radarnoise/data.py) and [`examples/quickstart.py`](../examples/quickstart.py) provide built-in synthetic complex slow-time IQ windows so you can test the 17 physical degradation models, demodulation routines, and classical estimators out of the box.

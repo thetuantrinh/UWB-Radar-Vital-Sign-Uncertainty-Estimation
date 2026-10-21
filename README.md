@@ -12,7 +12,7 @@ This repository contains the official benchmark and physical degradation library
 - **Novelda 7.25 GHz IR-UWB** ($\lambda = 41.4\text{ mm}$)
 - **UMAIN 4.60 GHz IR-UWB** ($\lambda = 65.2\text{ mm}$)
 
-All signals are kept at the **complex slow-time IQ level** (`16 range bins × 800 frames @ 20 Hz`) so that receiver, oscillator, timing, scene, and subject impairments can be injected **physically before demodulation**, anchored to each window's native dynamic chest-motion power $P = \operatorname{mean}_t |z_{k_0}(t) - \bar{z}_{k_0}|^2$.
+All signals are kept at the **complex slow-time IQ level** (`16 range bins × 800 frames @ 20 Hz`) extracted from the **TIM 2026 Multi-Radar Vital-Sign Dataset** ([`NguyenVanKhai2412/Camera-UWB_Radars-Fusion-VitalEstimation`](https://github.com/NguyenVanKhai2412/Camera-UWB_Radars-Fusion-VitalEstimation.git)), so that receiver, oscillator, timing, scene, and subject impairments can be injected **physically before demodulation**, anchored to each window's native dynamic chest-motion power $P = \operatorname{mean}_t |z_{k_0}(t) - \bar{z}_{k_0}|^2$.
 
 ---
 
@@ -22,12 +22,13 @@ This repository is organized into modular release stages accompanying our manusc
 
 | Component | Module / Path | Status |
 |---|---|---|
+| **Base Multimodal Dataset (TIM 2026)** | [`Camera-UWB_Radars-Fusion-VitalEstimation`](https://github.com/NguyenVanKhai2412/Camera-UWB_Radars-Fusion-VitalEstimation.git) | ✅ **Available** |
 | **Part 1: Controlled IQ-Level Degradation Library & Classical Survey** | [`radarnoise/`](radarnoise/), [`examples/`](examples/), [`scripts/`](scripts/), [`results/REPORT.md`](results/REPORT.md) | ✅ **Published** |
 | **Part 2: Multi-Radar Cardiac Processing (`p6`/`p4h`), Quality Gate & `HRSpecNet`** | `radarnoise/cardiac.py`, `radarnoise/hrnet.py`, `radarnoise/train_hr.py` | 🚧 **Coming soon!** |
 | **Part 3: Dual Uncertainty Quantification (Aleatoric + Epistemic + Conformal + Multi-Radar Fusion)** | `radarnoise/uncertainty_model.py`, `radarnoise/train_uncertainty.py`, `scripts/dual_uq.py` | 🚧 **Coming soon!** |
-| **Anonymized Multi-Radar IQ Dataset (`*_w40_s2.npz`) & Trained Checkpoints** | [`data/`](data/) (17 subjects `S01`–`S17`, 12 conditions, 10,089 windows/radar) | 🚧 **Coming soon!** |
+| **Preprocessed Slow-Time IQ Windows (`*_w40_s2.npz`) & Trained Checkpoints** | [`data/`](data/) (17 subjects `S01`–`S17`, 12 conditions, 10,089 windows/radar) | 🚧 **Coming soon!** |
 
-> 💡 **Run Immediately Without Waiting for the Full Dataset:**
+> 💡 **Run Immediately Without Waiting for the Full Preprocessed IQ Windows:**
 > [`radarnoise/data.py`](radarnoise/data.py) includes a built-in physical synthetic IQ generator (`synthetic_windows()`), so [`examples/quickstart.py`](examples/quickstart.py) and [`scripts/check_pipeline.py`](scripts/check_pipeline.py) run out-of-the-box on CPU right after cloning!
 
 ---
